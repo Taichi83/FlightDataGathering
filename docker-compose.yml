@@ -1,0 +1,20 @@
+version: '2.4'
+services:
+  flight_data_gathering:
+    container_name: flight_data_gathering_master
+    build: .
+    image: flight_data_gathering:latest
+#    runtime: nvidia
+    environment:
+#      - NVIDIA_VISIBLE_DEVICES=all
+      - ./web.env
+#    command: nvidia-smi
+    tty: true
+    command: /bin/bash
+    volumes:
+      - .:/src
+    ports:
+      - "8008:8008"
+      - "6006:6006"
+      - "6007:6007"
+#      - "2230:2230"
