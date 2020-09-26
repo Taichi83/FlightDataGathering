@@ -381,6 +381,7 @@ def test_2():
 
 
 def test_3():
+    # todo: airport should not be decided for searching because the time range
     airport_depart_name_key = 'Fukuoka'
     airport_arrival_name_key = 'Haneda'
 
