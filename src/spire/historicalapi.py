@@ -180,6 +180,8 @@ def get_data(job_id, api_token, url_historical=URL_HISTORICAL, max_wait_time=60,
                 os.makedirs(dir_save)
             file = open(path, 'wb').write(r.content)
 
+            #todo: もしデータを間引くならここ。(csvを読み込み、1秒ごととする）
+
             if save_s3:
                 path = transfer_to_s3(path, dir_local_parent=dir_save,
                                       dir_s3_parent=dir_s3_parent,
