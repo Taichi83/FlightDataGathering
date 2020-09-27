@@ -5,8 +5,9 @@ services:
     build: .
     image: flight_data_gathering:latest
 #    runtime: nvidia
-    environment:
-#      - NVIDIA_VISIBLE_DEVICES=all
+#    environment:
+##      - NVIDIA_VISIBLE_DEVICES=all
+    env_file:
       - ./web.env
 #    command: nvidia-smi
     tty: true
