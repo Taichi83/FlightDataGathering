@@ -50,3 +50,6 @@ RUN chmod -R a+w .
 COPY secret.conf /root/.config/pyopensky/secret.conf
 
 #ENV alias python=python3.6
+# plotly
+RUN jupyter labextension install jupyterlab-plotly@4.12.0
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.12.0

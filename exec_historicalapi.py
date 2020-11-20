@@ -1,16 +1,16 @@
 import datetime
 import pytz
-from src.spire.historicalapi import QueryGetManager
+from flight_data_gathering.spire.historicalapi import QueryGetManager
 
 
 def main():
-    time_interval_start = datetime.datetime(year=2019, month=9, day=1, hour=0, minute=0, second=0, tzinfo=pytz.utc)
-    time_interval_stop = datetime.datetime(year=2019, month=9, day=2, hour=0, minute=0, second=0, tzinfo=pytz.utc)
-    query_time_interval = datetime.timedelta(hours=1)
-    callsign = 'ANA1'
+    time_interval_start = datetime.datetime(year=2019, month=1, day=1, hour=0, minute=0, second=0, tzinfo=pytz.utc)
+    time_interval_stop = datetime.datetime(year=2019, month=6, day=30, hour=0, minute=0, second=0, tzinfo=pytz.utc)
+    query_time_interval = datetime.timedelta(weeks=1)
+    callsign = 'ANA184,ANA182,ANA186,ANA183,ANA181,ANA185'
     save_s3 = True
     remove_local_file = False
-    processes = 6
+    processes = 10
 
     query_get_manager = QueryGetManager()
     list_dict = query_get_manager.query_request(time_interval_start,
